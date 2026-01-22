@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -63,7 +64,7 @@ int solve() {
     int n;
     cin >> n;
     
-    string stations[n];
+    vector<string> stations(n);
     for (int i = 0; i < n; i++) {
         cin >> stations[i];
     }

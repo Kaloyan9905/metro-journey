@@ -62,6 +62,8 @@ const vector<string> keys = {
     "eco", "park", "city", "tech", "green", "blue", "red", "gold", "silver"
 };
 
+const long long MAX_TOTAL_STATIONS = 1000000;  // Ограничение от условието
+
 string generateRandomString(int length) {
     string result;
     for (int i = 0; i < length; i++) {
@@ -171,7 +173,23 @@ int main(int argc, char* argv[]) {
     long long totalStations = 0;
     
     for (int t = 1; t <= numQueries; t++) {
-        int n = randomInRange(minStations, maxStations);
+        int n;
+        
+        // Edge case: първите няколко теста са специални случаи
+        if (t == 1 && minStations <= 1) {
+            n = 1;  // Edge case: N = 1
+        } else {
+            n = randomInRange(minStations, maxStations);
+        }
+        
+        // Проверка за ограничението от 1,000,000 общо станции
+        if (totalStations + n > MAX_TOTAL_STATIONS) {
+            cout << "\n[ВНИМАНИЕ] Достигнато ограничение от " << MAX_TOTAL_STATIONS << " станции.\n";
+            cout << "Генерирани " << (t - 1) << " запитвания вместо " << numQueries << ".\n";
+            numQueries = t - 1;
+            break;
+        }
+        
         totalStations += n;
         
         string key = keys[rand() % keys.size()];

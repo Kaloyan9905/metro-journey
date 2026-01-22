@@ -83,7 +83,7 @@ echo ""
 echo -e "${YELLOW}[3/3] Сравнение на резултатите...${NC}"
 echo ""
 
-TOTAL=$(wc -l < output/output.txt | tr -d ' ')
+TOTAL=$(grep -c '' output/output.txt || echo "0")
 PASSED=0
 FAILED=0
 

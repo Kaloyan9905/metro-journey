@@ -1,6 +1,6 @@
 <!--
 ============================================================================
-Copyright (c) 2026 Калоян Ивелинов Milchev (Kaloyan Ivelinov Milchev)
+Copyright (c) 2026 Kaloyan Ivelinov Milchev
 Факултетен номер / Student ID: F118428
 Нов български университет (New Bulgarian University)
 ============================================================================
@@ -80,7 +80,7 @@ park
 
 ## Explanations
 
-**Query 1:** Stations "cen**tra**lna" and "**ser**dika" contain the key string "ser". Station 1 (centralna) is the starting point, station 3 (serdika) is mandatory, station 5 (mladost) is the endpoint. Total: **3 stations**.
+**Query 1:** Station "**ser**dika" contains the key string "ser". Station 1 (centralna) is the starting point, station 3 (serdika) is mandatory, station 5 (mladost) is the endpoint. Total: **3 stations**.
 
 **Query 2:** No station contains "xyz". We only visit the starting (1) and ending (6) stations. Total: **2 stations**.
 
